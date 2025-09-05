@@ -5,7 +5,7 @@ class CreateBnb {
   static const String apiUrl = String.fromEnvironment('API_URL');
 
   static Future<http.Response> createBnb(Map<String, dynamic> bnbData) async {
-    final url = Uri.parse('$apiUrl/bnb');
+    final url = Uri.parse('$apiUrl/bnbs');
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},
