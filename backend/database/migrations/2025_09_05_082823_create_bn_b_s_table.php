@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bn_b_s', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->string('location');
+            $table->decimal('price_per_night', 10, 2);
+            $table->boolean('availability')->default(true);
             $table->timestamps();
         });
     }
