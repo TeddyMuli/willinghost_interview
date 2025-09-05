@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/bnb.dart';
 
-class FetchBnb {
+class FetchBnbs {
   static const String apiUrl = String.fromEnvironment('API_URL');
 
   static Future<List<Bnb>> fetchBnbs() async {
