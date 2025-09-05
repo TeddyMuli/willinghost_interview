@@ -3,7 +3,7 @@ import '../models/bnb.dart';
 import '../services/get_bnb.dart';
 
 class BnbDetailPage extends StatelessWidget {
-  final String bnbId;
+  final int bnbId;
   const BnbDetailPage({Key? key, required this.bnbId}) : super(key: key);
 
   @override

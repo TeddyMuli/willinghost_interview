@@ -3,7 +3,7 @@ import '../services/get_bnb.dart';
 import '../services/update_bnb.dart';
 
 class EditBnbPage extends StatefulWidget {
-  final String bnbId;
+  final int bnbId;
   const EditBnbPage({Key? key, required this.bnbId}) : super(key: key);
 
   @override

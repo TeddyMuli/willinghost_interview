@@ -31,7 +31,7 @@ class _BnbsPageState extends State<BnbsPage> {
     if (result == true) _refreshBnbs();
   }
 
-  void _navigateToEditBnb(String id) async {
+  void _navigateToEditBnb(int id) async {
     final result = await Navigator.of(
       context,
     ).pushNamed('/edit-bnb', arguments: {'id': id});
@@ -42,7 +42,7 @@ class _BnbsPageState extends State<BnbsPage> {
     Navigator.of(context).pushNamed('/bnb-detail', arguments: {'id': id});
   }
 
-  void _deleteBnb(String id) async {
+  void _deleteBnb(int id) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
@@ -97,7 +97,7 @@ class _BnbsPageState extends State<BnbsPage> {
               return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: ListTile(
-                  onTap: () => _navigateToBnbDetail(bnb.id),
+                  onTap: () => _navigateToBnbDetail(bnb.id.toString()),
                   title: Text(bnb.name),
                   subtitle: Text(
                     'Location: ${bnb.location}\nPrice: ${bnb.pricePerNight}',

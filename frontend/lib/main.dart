@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:frontend/pages/list_bnbs.dart';
 import 'package:frontend/pages/add_bnb.dart';
 import 'package:frontend/pages/edit_bnb.dart';
@@ -7,7 +6,6 @@ import 'package:frontend/pages/bnb.dart';
 
 
 Future<void> main() async {
-  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 

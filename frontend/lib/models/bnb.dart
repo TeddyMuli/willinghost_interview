@@ -1,7 +1,7 @@
 class Bnb {
   final String name;
   final String location;
-  final String id;
+  final int id;
   final double pricePerNight;
   final bool availability;
 
@@ -11,15 +11,19 @@ class Bnb {
     required this.name,
     required this.location,
     required this.pricePerNight,
-    });
+  });
 
-    factory Bnb.fromJson(Map<String, dynamic> json) {
-      return Bnb(
-        id: json['id'],
-        availability: json['availability'],
-        name: json['name'],
-        location: json['location'],
-        pricePerNight: (json['pricePerNight'] as num).toDouble(),
-      );
-    }
+  factory Bnb.fromJson(Map<String, dynamic> json) {
+  return Bnb(
+    id: json['id'],
+    availability: json['availability'] is bool
+        ? json['availability']
+        : json['availability'] == 1,
+    name: json['name'],
+    location: json['location'],
+    pricePerNight: (json['pricePerNight'] != null)
+        ? (json['pricePerNight'] as num).toDouble()
+        : 0.0,
+  );
+}
 }
